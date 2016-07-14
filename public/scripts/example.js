@@ -1,16 +1,15 @@
-var CommentBox = require('./Box');
 
-var data = [
+/*var data = [
   {id:1, author:'PPPEEETEERR', comment='LUUUUUUUUUUNAAAAAAAAAA'},
   {id:2, author:'RRRRRRRRREAECTTTTT', comment='LOOOOOOOOOOOSERRRRRRRR'}
-];
+];*/
 
 class CommentBox extends React.Component {
   render(){
     return(
       <div className="commentbox">
         <h1>HEELOLOL</h1>
-        <CommentList data={this.props.data}/>
+        <CommentList />
         <CommentForm />
       </div>
     );
@@ -19,16 +18,11 @@ class CommentBox extends React.Component {
 
 class CommentList extends React.Component{
   render(){
-    var Note = this.props.data.map(function(comment){
-      return(
-        <Comment author={comment.author} key={comment.id}>
-        {comment.comment}
-        </Comment>
-      );
-    });
+
     return(
       <div className="commentList">
-        {Note}
+        <Comment author="PPPEEETEERR">LUUUUUUUUUUNAAAAAAAAAA</Comment>
+        <Comment author="RRRRRRRRREAECTTTTT">LOOOOOOOOOOOSERRRRRRRR</Comment>
       </div>
     );
   }
@@ -62,6 +56,6 @@ class CommentForm extends React.Component{
 };
 
 ReactDOM.render(
-  <CommentBox data={data}/>,
+  <CommentBox />,
   document.getElementById('content')
 );
